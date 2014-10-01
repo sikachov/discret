@@ -1,4 +1,4 @@
-__author__ = 'sikachov evgeny'
+__author__ = 'evgeny'
 
 def enter():
     e=raw_input()
@@ -6,48 +6,58 @@ def enter():
 def goto_q0():
     print "Insert card"
     enter()
-    goto_q1()
+    switch[1]()
 
 
 def goto_q1():
     pin = int(raw_input("Enter the PIN: "))
     if pin == 1234:
-        goto_q2()
+        switch[2]()
     else:
-        goto_q1()
+        switch[1]()
 
 
 def goto_q2():
     choice = int(raw_input("1. Cancel\n2. Balance\n3. Cash\nEnter the choice: "))
     if choice == 1:
-        goto_q11()
+        switch[11]()
     elif choice==2:
-        goto_q4()
+        switch[4]()
     elif choice==3:
-        goto_q3()
+        switch[3]()
 
 def goto_q4():
     print "Balance: 100$"
     enter()
-    goto_q11()
+    switch[11]()
 
 def goto_q3():
     money=raw_input("Money: ")
-    goto_q5()
+    switch[5]()
 
 def goto_q5():
     print "Take a money"
     enter()
-    goto_q6()
+    switch[6]()
 
 def goto_q6():
     print "Take a check"
     enter()
-    goto_q11()
+    switch[11]()
 
 def goto_q11():
     print "Take card\n\n\n"
     enter()
-    goto_q0()
+    switch[0]()
 
-goto_q0()
+switch = {0 : goto_q0,
+                1 : goto_q1,
+                2 : goto_q2,
+                3 : goto_q3,
+                4 : goto_q4,
+                5 : goto_q5,
+                6 : goto_q6,
+                11 : goto_q11
+}
+
+switch[0]()

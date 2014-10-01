@@ -1,4 +1,4 @@
-__author__ = 'sikachov evgeny'
+__author__ = 'evgeny'
 
 def enter():
     e=raw_input()
@@ -50,4 +50,4 @@ def goto_q11():
     enter()
     goto_q0()
 
-goto_q0()
+ifSwitchTable=[[]]
